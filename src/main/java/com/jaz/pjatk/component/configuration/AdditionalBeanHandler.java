@@ -1,5 +1,6 @@
 package com.jaz.pjatk.component.configuration;
 
+import com.jaz.pjatk.model.ServiceObjectTwo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnExpression;
@@ -13,8 +14,9 @@ public class AdditionalBeanHandler {
     private final static Logger log = LoggerFactory.getLogger(AdditionalBeanHandler.class);
 
     @Bean
-    public void testBean(){
+    public ServiceObjectTwo testBean(){
         log.info("Hello from AdditionalBeanHandler class");
+        return new ServiceObjectTwo();
     }
 
 }
