@@ -1,3 +1,7 @@
 data:
   app:
     feature-status: true
+
+prop:
+  status:
+    value-feature: true
