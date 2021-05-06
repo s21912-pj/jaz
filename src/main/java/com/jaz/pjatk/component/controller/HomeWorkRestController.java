@@ -21,12 +21,12 @@ public class HomeWorkRestController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<JsonNode> putWithPathVariable(@PathVariable Long id,@RequestBody JsonNode jsonNode){
+    public ResponseEntity<JsonNode> putWithPathVariableAndRequestBody(@PathVariable Long id,@RequestBody JsonNode jsonNode){
         return ResponseEntity.ok(((ObjectNode) jsonNode).put("id", id));
     }
 
     @PostMapping("/")
-    public ResponseEntity<JsonNode> postWithPathVariable(@RequestBody JsonNode jsonNode){
+    public ResponseEntity<JsonNode> postWithRequestBody(@RequestBody JsonNode jsonNode){
         return ResponseEntity.ok(jsonNode);
     }
 
