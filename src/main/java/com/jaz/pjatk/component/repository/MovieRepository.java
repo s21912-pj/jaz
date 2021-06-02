@@ -7,15 +7,17 @@ import org.springframework.data.jpa.repository.Query;
 
 import javax.transaction.Transactional;
 import java.util.List;
+import java.util.Optional;
 
 public interface MovieRepository extends JpaRepository<Movie,Long> {
-
+    @Override
+    Optional<Movie> findById(Long id);
     @Override
     List<Movie> findAll();
     @Override
     <S extends Movie> S save(S entity);
     @Override
-    void delete(Movie entity);
+    void deleteById(Long id);
 
     @Transactional
     @Modifying
